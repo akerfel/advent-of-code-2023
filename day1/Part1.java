@@ -6,15 +6,7 @@ import java.util.List;
 
 public class Part1 {
     public static void main(String[] args) throws IOException {
-        List<String> lines = new ArrayList<String>();
-        BufferedReader bf = new BufferedReader(new FileReader("input.txt"));
-        String newLine = bf.readLine();
-       
-        while (newLine != null) {
-            lines.add(newLine);
-            newLine = bf.readLine();
-        }
-        bf.close();
+        List<String> lines = getInputLines(args[0]);
 
         int sum = 0;
         for (String line : lines) {
@@ -49,4 +41,17 @@ public class Part1 {
         }
         return '0';
      }
+
+     public static List<String> getInputLines(String fileName) throws IOException {
+        List<String> lines = new ArrayList<String>();
+        BufferedReader bf = new BufferedReader(new FileReader(fileName));
+        String newLine = bf.readLine();
+       
+        while (newLine != null) {
+            lines.add(newLine);
+            newLine = bf.readLine();
+        }
+        bf.close();
+        return lines;
+    }
 }
