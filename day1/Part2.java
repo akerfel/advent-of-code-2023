@@ -4,11 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PartTwo {
+public class Part2 {
     public static void main(String[] args) throws IOException {
         List<String> lines = new ArrayList<String>();
-        System.out.println(System.getProperty("user.dir"));
-        BufferedReader bf = new BufferedReader(new FileReader("./day1/Input.txt"));
+        BufferedReader bf = new BufferedReader(new FileReader("input.txt"));
         String newLine = bf.readLine();
        
         while (newLine != null) {
