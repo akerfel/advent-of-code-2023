@@ -61,29 +61,6 @@ public class Part2 {
         return adjacentNumbers == 2;
     }
 
-    // returns 0 if not next to symbol
-    public static int getNumberValue(char[][] m, int y1, int x1) {
-        int length = 0;
-        int xL = x1;
-        String strNumber = "";
-        while (isDigit(m, y1, xL)) {
-            strNumber += m[y1][xL];
-            length++;
-            xL++;
-        } 
-        int number = Integer.parseInt(strNumber);
-
-        for (int y = y1 - 1; y <= y1 + 1; y++) {
-            for (int x = x1 - 1; x <= x1 + length; x++) {
-                if (isSymbol(m, y, x)) {
-                    return number;
-                }
-            }
-        }
-
-        return 0;
-    }
-
     public static boolean isSymbol(char c) {
         return !Character.isDigit(c) && c != '.';
     }
